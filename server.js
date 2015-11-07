@@ -1,5 +1,6 @@
 var http = require('http');
 var fs = require('fs');
+var fourOhFour = require(__dirname + "/lib/fourOhFour");
 
 var server = http.createServer(function(req, res) {
   //index.html
@@ -7,7 +8,7 @@ var server = http.createServer(function(req, res) {
     res.writeHead(200, {
       'Content-Type': 'text/html'
     });
-    res.write(fs.readFileSync(__dirname + '/public/index.html'));
+    res.write(fs.readFileSync(__dirname + '/lib/index.html'));
     return res.end();
   }
   //style.css
@@ -15,7 +16,7 @@ var server = http.createServer(function(req, res) {
     res.writeHead(200, {
       'Content-Type': 'text/css'
     });
-    res.write(fs.readFileSync(__dirname + '/public/style.css'));
+    res.write(fs.readFileSync(__dirname + '/lib/style.css'));
     return res.end();
   }
   //greet - POST
@@ -39,11 +40,12 @@ var server = http.createServer(function(req, res) {
   }
   //other - 404
   else {
-    res.writeHead(404, {
-      'Content-Type': 'text/plain'
-    });
-    res.write('404 - Page cannot be found!');
-    res.end();
+    fourOhFour.fourOhFour(res);
+    // res.writeHead(404, {
+    //   'Content-Type': 'text/plain'
+    // });
+    // res.write('404 - Page cannot be found!');
+    // res.end();
   }
 });
 
