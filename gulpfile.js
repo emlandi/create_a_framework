@@ -28,7 +28,7 @@ gulp.task('jshint:app', function() {
 
 gulp.task('mocha', function () {
     return gulp.src(testFile, {read: false})
-      .pipe(mocha({reporter: 'landing'}));
+      .pipe(mocha({reporter: 'nyan'}));
 });
 
 gulp.task('jshint', ['jshint:test', 'jshint:app']);
