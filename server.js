@@ -5,13 +5,13 @@ var Router = require(__dirname + '/lib/router');
 var myRouter = new Router();
 
 myRouter.get('/', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
+  myRouter.writeHeadHTML(res);
   res.write(fs.readFileSync(__dirname + '/public/index.html'));
   return res.end();
 });
 
 myRouter.get('/base.css', function(req, res) {
-  res.writeHead(200, {'Content-Type': 'text/css'});
+  myRouter.writeHeadCSS(res);
   res.write(fs.readFileSync(__dirname + '/public/base.css'));
   return res.end();
 });
