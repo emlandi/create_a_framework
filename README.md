@@ -13,3 +13,10 @@ Testing: 4pts
 Documentation: 6pts
 Ability to publish on npm: 3pts
 TravisCI: 3pts
+
+
+Base Style Assignment
+-A CSS reset
+-Base element styles that make sense
+-Sensible typography choices
+-A sane color scheme

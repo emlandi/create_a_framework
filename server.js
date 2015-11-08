@@ -2,6 +2,9 @@ var http = require('http');
 var fs = require('fs');
 var fourOhFour = require(__dirname + "/lib/fourOhFour");
 
+var GetTime = require(__dirname + '/public/time');
+var SayHello = require(__dirname + '/public/greet');
+
 var server = http.createServer(function(req, res) {
   //index.html
   if (req.url === '/' && req.method === 'GET') {
@@ -18,6 +21,15 @@ var server = http.createServer(function(req, res) {
     });
     res.write(fs.readFileSync(__dirname + '/lib/style.css'));
     return res.end();
+  }
+  //greet
+  else if (req.url === '/greet' && req.method === 'GET') {
+    res.writeHead(200, {
+      'Content-Type': 'application/json'
+    });
+    var sayHello = new SayHello();
+    res.write(JSON.stringify(sayHello));
+    res.end();
   }
   //greet - POST
   else if (req.url === '/greet' && req.method === 'POST') {
@@ -36,6 +48,15 @@ var server = http.createServer(function(req, res) {
       'Content-Type': 'application/json'
     });
     res.write(JSON.stringify({greeting:'hello ' + req.url.split('/greet/')[1]}));
+    res.end();
+  }
+  //time
+  else if (req.url === '/time' && req.method === 'GET') {
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+    });
+    var getTime = new GetTime();
+    res.write(JSON.stringify(getTime));
     res.end();
   }
   //other - 404
