@@ -1,6 +1,5 @@
 var http = require('http');
 var fs = require('fs');
-var fourOhFour = require(__dirname + "/lib/fourOhFour");
 
 var Router = require(__dirname + '/lib/router');
 var myRouter = new Router();
