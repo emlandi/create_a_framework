@@ -1,0 +1,36 @@
+body {
+  font-family: 'Arvo', serif;
+  background-color: #A5E3FF;
+  color: #000E2B;
+  font-size: 1em;
+  padding: 1em;
+}
+
+h1
+ {
+  font-family: 'Permanent Marker', cursive;
+  color: #6875FF;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+h2,
+h3
+ {
+  font-family: 'Permanent Marker', cursive;
+  color: #6875FF;
+  font-size: 2em;
+  text-align: center;
+}
+
+a,
+a:link {
+  color: #6875FF;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #F6FFFE;
+}
