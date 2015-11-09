@@ -14,9 +14,15 @@ Documentation: 6pts
 Ability to publish on npm: 3pts
 TravisCI: 3pts
 
-
 Base Style Assignment
 -A CSS reset
 -Base element styles that make sense
 -Sensible typography choices
 -A sane color scheme
+
+NPM Publish: To publish to npm
+- Requires package dot JSON with 'name' and 'version' number. Module name cannot alrady exit in the npm respoistory.
+- To publish, a user be registered on npm. Create a user, if one already does not exit by typing npm adduser in the terminal.
+- Test to see if the npm user credentials are stored on your client machine by typing npm config.
+- Use npm publish to publish package.
+- Use npm unpublish to remove the package from npm.
