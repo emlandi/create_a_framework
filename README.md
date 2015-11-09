@@ -15,7 +15,11 @@ Note: this has not been published on npm, but it is publish-able. In order to pu
 
 First install: npm install create_a_framework_ema
 
-Then require: var ema = require('create_a_framework_ema')
+Then require:
+```
+var ema = require('create_a_framework_ema')
+var myEMA = new ema();
+```
 
 ##Methods-
 
@@ -32,7 +36,7 @@ Then require: var ema = require('create_a_framework_ema')
 
 ##Using .get-
 ```
-  myRouter.get('/secret', function(req, res) {
+  myEMA.get('/secret', function(req, res) {
     //code here
   });
 ```
@@ -40,7 +44,7 @@ This will send a GET request to the url '/secret'. The **.get** can be interchan
 
 ##Using .writeHeadCSS-
 ```
-  myRouter.writeHeadCSS(res);
+  myEMA.writeHeadCSS(res);
 ```
 This one line automatically sets the status to 200 and content type to css. Essentially it replaces the following three lines of code:
 ```
@@ -52,7 +56,7 @@ This one line automatically sets the status to 200 and content type to css. Esse
 
 ##Using .writeSync-
 ```
-  myRouter.writeSync(res,'/public/index.html');
+  myEMA.writeSync(res,'/public/index.html');
 ```
 Where *'/public/index.html'* is the file path. This incorporates the 'fs' library and will read the supplied directory file and wtite the results.
 
