@@ -1,4 +1,4 @@
-https://travis-ci.org/emlandi/create_a_framework.svg?branch=master
+[![Build Status](https://travis-ci.org/emlandi/create_a_framework.svg?branch=master)](https://travis-ci.org/emlandi/create_a_framework)
 
 Assignment for JSDA Week 2
 Group: Emily, Michael & Ansoo
