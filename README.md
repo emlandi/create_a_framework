@@ -32,7 +32,7 @@ Then require: var ema = require('create_a_framework_ema')
 
 ##Using .get-
 ```
-  myRouter**.get**('/secret', function(req, res) {
+  myRouter.get('/secret', function(req, res) {
     //code here
   });
 ```
@@ -40,7 +40,7 @@ This will send a GET request to the url '/secret'. The **.get** can be interchan
 
 ##Using .writeHeadCSS-
 ```
-  myRouter**.writeHeadCSS**(res);
+  myRouter.writeHeadCSS(res);
 ```
 This one line automatically sets the status to 200 and content type to css. Essentially it replaces the following three lines of code:
 ```
@@ -52,7 +52,7 @@ This one line automatically sets the status to 200 and content type to css. Esse
 
 ##Using .writeSync-
 ```
-  myRouter**.writeSync**(res,'/public/index.html');
+  myRouter.writeSync(res,'/public/index.html');
 ```
 Where *'/public/index.html'* is the file path. This incorporates the 'fs' library and will read the supplied directory file and wtite the results.
 
