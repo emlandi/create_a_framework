@@ -6,7 +6,6 @@ chai.use(chaihttp);
 require(__dirname + '/../server');
 var fourOhFour = require(__dirname + "/../lib/fourOhFour");
 
-
 describe('http server', function() {
   it('should respond to a GET request at route', function(done) {
     chai.request('localhost:3000')
@@ -17,6 +16,7 @@ describe('http server', function() {
       done();
     });
   });
+
   it('should respond test the 404 file and recieve the error response', function(done) {
     chai.request('localhost:3000')
     .get('/fesfe')

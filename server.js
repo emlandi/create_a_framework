@@ -16,14 +16,14 @@ myRouter.get('/base.css', function(req, res) {
   return res.end();
 });
 
-// myRouter.get('/secret', function(req, res) {
-//   res.writeHead(200, {'Content-Type': 'text/plain'});
-//   res.write('You found a secret page. Wahahahaha.');
-//   res.end();
-// });
+myRouter.get('/secret', function(req, res) {
+  myRouter.writeHeadPlain(res)
+  res.write('Suprise! You found a secret page.');
+  res.end();
+});
 
 http.createServer(function(req, res) {
-    myRouter.route(req, res);
-  }).listen(3000, function() {
-    console.log('Server up.');
+  myRouter.route(req, res);
+}).listen(3000, function() {
+  console.log('Server up.');
 });
