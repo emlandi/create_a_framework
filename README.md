@@ -43,10 +43,11 @@ This will send a GET request to the url '/secret'. The **.get** can be interchan
   myRouter**.writeHeadCSS**(res);
 
 This one line automatically sets the status to 200 and content type to css. Essentially it replaces the following three lines of code:
-  * res.writeHead(200, {
-  *   "Content-Type": "text/css"
-  * });
-
+```
+  res.writeHead(200, {
+    "Content-Type": "text/css"
+  });
+```
   The other .writeHead methods for HTML, CSS & JSON work in the same way, automatically setting the status and content type.
 
 ##Using .writeSync-
