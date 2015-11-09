@@ -1,5 +1,5 @@
-create_a_framework_ema
-*a simple http framework*
+#create_a_framework_ema
+##a simple http framework
 
 [![Build Status](https://travis-ci.org/emlandi/create_a_framework.svg?branch=master)](https://travis-ci.org/emlandi/create_a_framework)
 
@@ -12,28 +12,28 @@ Note: this has not been published on npm, but it is publish-able. In order to pu
 - Use npm unpublish to remove the package from npm.
 
 
-How to Use the create_a_framework_ema Framework:
+#How to Use the create_a_framework_ema Framework:
 
-Installation-
+##Installation-
 
 First install: npm install create_a_framework_ema
 
 Then require: var ema = require('create_a_framework_ema')
 
-Methods-
+##Methods-
 
-.get
-.post
-.put
-.patch
-.delete
-.writeHeadPlain
-.writeHeadHTML
-.writeHeadCSS
-.writeHeadJSON
-.writeSync
+*.get
+*.post
+*.put
+*.patch
+*.delete
+*.writeHeadPlain
+*.writeHeadHTML
+*.writeHeadCSS
+*.writeHeadJSON
+*.writeSync
 
-Using .get-
+##Using .get-
 
   myRouter**.get**('/secret', function(req, res) {
     //code here
@@ -41,7 +41,7 @@ Using .get-
 
 This will send a GET request to the url '/secret'. The **.get** can be interchanged with other methods, .post, .put, .path and/or .delete.
 
-Using .writeHeadCSS-
+##Using .writeHeadCSS-
 
   myRouter**.writeHeadCSS**(res);
 
@@ -52,7 +52,7 @@ This one line automatically sets the status to 200 and content type to css. Esse
 
   The other .writeHead methods for HTML, CSS & JSON work in the same way, automatically setting the status and content type.
 
-Using .writeSync-
+##Using .writeSync-
 
   myRouter**.writeSync**(res,'/public/index.html');
 
