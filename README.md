@@ -1,30 +1,65 @@
+create_a_framework_ema
+*a simple http framework*
+
 [![Build Status](https://travis-ci.org/emlandi/create_a_framework.svg?branch=master)](https://travis-ci.org/emlandi/create_a_framework)
 
-Assignment for JSDA Week 2
-Group: Emily, Michael & Ansoo
+Note: this has not been published on npm, but it is publish-able. In order to publish to npm, the steps are as follows:
 
-Create a series of help libraries/functions for creating REST APIs using the node HTTP module.
-
-This is a pretty open ended assignment and you're welcome to take it as far as you want. The final project should be able to be brought into a Javascript file using the require function and should also be able to be published on npm. It should be well testing and be setup on TravisCI...  don't forget the docs!
-
-Submit the repo, no need to submit as a pull request.
-
-Rubric
-Framework usefulness: 4pts
-Testing: 4pts
-Documentation: 6pts
-Ability to publish on npm: 3pts
-TravisCI: 3pts
-
-Base Style Assignment
--A CSS reset
--Base element styles that make sense
--Sensible typography choices
--A sane color scheme
-
-NPM Publish: To publish to npm
-- Requires package dot JSON with 'name' and 'version' number. Module name cannot alrady exit in the npm respoistory.
-- To publish, a user be registered on npm. Create a user, if one already does not exit by typing npm adduser in the terminal.
+- Requires package.JSON with 'name' and 'version' number. Module name cannot alrady exit in the npm respoistory.
+- Requires that user is registered on npm. Create a user, if one already does not exit, by typing npm adduser in the terminal.
 - Test to see if the npm user credentials are stored on your client machine by typing npm config.
 - Use npm publish to publish package.
 - Use npm unpublish to remove the package from npm.
+
+
+How to Use the create_a_framework_ema Framework:
+
+Installation-
+
+First install: npm install create_a_framework_ema
+
+Then require: var ema = require('create_a_framework_ema')
+
+Methods-
+
+.get
+.post
+.put
+.patch
+.delete
+.writeHeadPlain
+.writeHeadHTML
+.writeHeadCSS
+.writeHeadJSON
+.writeSync
+
+Using .get-
+
+  myRouter**.get**('/secret', function(req, res) {
+    //code here
+  });
+
+This will send a GET request to the url '/secret'. The **.get** can be interchanged with other methods, .post, .put, .path and/or .delete.
+
+Using .writeHeadCSS-
+
+  myRouter**.writeHeadCSS**(res);
+
+This one line automatically sets the status to 200 and content type to css. Essentially it replaces the following three lines of code:
+  res.writeHead(200, {
+    "Content-Type": "text/css"
+  });
+
+  The other .writeHead methods for HTML, CSS & JSON work in the same way, automatically setting the status and content type.
+
+Using .writeSync-
+
+  myRouter**.writeSync**(res,'/public/index.html');
+
+Where *'/public/index.html'* is the file path. This incorporates the 'fs' library and will read the supplied directory file and wtite the results.
+
+
+
+
+
+
