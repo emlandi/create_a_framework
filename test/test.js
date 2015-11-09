@@ -5,7 +5,7 @@ chai.use(chaihttp);
 
 require(__dirname + '/../server');
 var fourOhFour = require(__dirname + "/../lib/fourOhFour");
-
+var router = require(__dirname + '/../lib/router');
 
 describe('http server', function() {
   it('should respond to a GET request at route', function(done) {
@@ -26,5 +26,16 @@ describe('http server', function() {
       done();
     });
   });
-
 });
+
+// describe('http server', function() {
+//   it('should respond to a GET request at route', function(done) {
+//     // chai.request('localhost:3000')
+//     // .get('/')
+//     // .end(function(err, res) {
+
+//       expect(res).to.be.json;
+//     //   done();
+//     // });
+//   });
+// });

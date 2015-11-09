@@ -6,21 +6,26 @@ var myRouter = new Router();
 
 myRouter.get('/', function(req, res) {
   myRouter.writeHeadHTML(res);
-  res.write(fs.readFileSync(__dirname + '/public/index.html'));
+  myRouter.writeSync(res,'/public/index.html');
   return res.end();
 });
 
 myRouter.get('/base.css', function(req, res) {
   myRouter.writeHeadCSS(res);
-  res.write(fs.readFileSync(__dirname + '/public/base.css'));
+  myRouter.writeSync(res, '/public/base.css');
+  return res.end();
+});
+myRouter.get('/fonts.css', function(req, res) {
+  myRouter.writeHeadCSS(res);
+  myRouter.writeSync(res, '/public/fonts.css');
   return res.end();
 });
 
-// myRouter.get('/secret', function(req, res) {
-//   res.writeHead(200, {'Content-Type': 'text/plain'});
-//   res.write('You found a secret page. Wahahahaha.');
-//   res.end();
-// });
+myRouter.get('/secret', function(req, res) {
+  myRouter.writeHeadPlain(res);
+  res.write('You found a secret page. Wahahahaha.');
+  res.end();
+});
 
 http.createServer(function(req, res) {
     myRouter.route(req, res);
