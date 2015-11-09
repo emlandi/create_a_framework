@@ -4,8 +4,7 @@ var expect = chai.expect;
 chai.use(chaihttp);
 
 require(__dirname + '/../server');
-var fourOhFour = require(__dirname + "/../lib/fourOhFour");
-
+var router = require(__dirname + '/../lib/router');
 
 describe('http server', function() {
   it('should respond to a GET request at route', function(done) {
@@ -26,5 +25,22 @@ describe('http server', function() {
       done();
     });
   });
-
+  it('should see if the base.css is included', function(done) {
+    chai.request('localhost:3000')
+    .get('/base.css')
+    .end(function(err, res) {
+      expect(err).to.eql(null);
+      expect(res.status).to.eql(200);
+      done();
+    });
+  });
+  it('should see if the fonts.css is included', function(done) {
+    chai.request('localhost:3000')
+    .get('/fonts.css')
+    .end(function(err, res) {
+      expect(err).to.eql(null);
+      expect(res.status).to.eql(200);
+      done();
+    });
+  });
 });
